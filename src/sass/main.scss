@@ -1,0 +1,205 @@
+@use "./reset";
+
+:root {
+  // Colors
+  --primary-clr-accent: 243, 87%, 12%;
+  --primary-clr: hsl(var(--primary-clr-accent));
+  --secondary-clr: hsl(238, 22%, 44%);
+
+  --bright-blue-accent: 224, 93%, 58%;
+  --bright-blue: hsl(var(--bright-blue-accent));
+  --moderate-cyan: hsl(170, 45%, 43%);
+  --red: hsl(0, 100%, 62%);
+
+  --light-grayish-blue: hsl(240, 75%, 98.43%);
+  --light-gray: hsl(0, 0%, 75%);
+  --white: hsl(0, 0%, 100%);
+
+  // Font Family
+  --font-body: "Open Sans", sans-serif;
+  --font-heading: "Raleway", sans-serif;
+
+  // Font Weight
+  --fw-400: 400;
+  --fw-700: 700;
+
+  // Font Heading
+  --heading-1: 2rem;
+  --heading-2: 1.875rem;
+  --heading-3: 1.25rem;
+  --heading-4: 1.125rem;
+  --normal: 1rem;
+  --sub-normal-1: 0.9375rem;
+  --sub-normal-2: 0.875rem;
+
+  // Container Width
+  --max-width: 75rem;
+
+  // Border
+  --input-border: 0.0625rem solid var(--primary-clr);
+  --input-errors-border: 0.0625rem solid var(--red);
+}
+
+body {
+  font-family: var(--font-body);
+
+  overflow-x: hidden;
+}
+
+.container {
+  width: min(100%, var(--max-width));
+
+  margin-inline: auto;
+}
+
+.main__title {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--heading-4), 3vw + 1rem, var(--heading-1));
+  font-weight: var(--fw-700);
+  color: var(--primary-clr);
+  line-height: 1.2;
+}
+
+.title-2 {
+  --normal: 14px;
+  font-family: var(--font-heading);
+  font-size: clamp(var(--normal), 0.8vw + 1rem, var(--heading-2));
+  font-weight: var(--fw-700);
+  color: var(--primary-clr);
+  line-height: 1.2;
+}
+
+.base__font {
+  font-size: clamp(var(--sub-normal-1), 0.5vw + 1rem, var(--normal));
+  font-weight: var(--fw-400);
+  color: var(--primary-clr);
+  line-height: 1.4;
+}
+
+.link {
+  font-size: clamp(var(--sub-normal-1), 0.8vw + 1rem, var(--normal));
+  font-weight: var(--fw-400);
+  color: var(--primary-clr);
+}
+
+.description__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  width: fit-content;
+
+  border-bottom: 0.0625rem solid var(--moderate-cyan);
+
+  padding-block-end: 0.25rem;
+  cursor: pointer;
+
+  & span {
+    font-size: clamp(var(--sub-normal-1), 0.8vw + 1rem, var(--normal));
+    font-weight: var(--fw-400);
+    color: var(--moderate-cyan);
+  }
+
+  & div {
+    width: 1rem;
+    height: 1rem;
+
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+}
+
+.input__outline {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--primary-clr);
+
+  border: var(--input-border);
+  border-radius: 0.1875rem;
+  padding: 0.5rem 0.25rem 0.5rem 1rem;
+
+  &.errors {
+    border: var(--input-errors-border);
+  }
+
+  &::placeholder {
+    font-family: var(--font-body);
+    font-size: var(--sub-normal-2);
+    color: var(--light-gray);
+  }
+}
+
+.input {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--primary-clr);
+
+  border-radius: 0.1875rem;
+  box-shadow: 0.125rem 0.1875rem 0.1875rem 0 hsl(var(--primary-clr-accent), 0.1);
+
+  padding: 0.5rem 0.25rem 0.75rem 1rem;
+
+  &.errors {
+    border: var(--input-errors-border);
+  }
+
+  &::placeholder {
+    font-family: var(--font-body);
+    font-size: var(--sub-normal-2);
+    color: var(--light-gray);
+  }
+}
+
+.btn {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+
+  font-family: inherit;
+  font-size: var(--sub-normal-2);
+  color: var(--light-grayish-blue);
+
+  background-color: var(--bright-blue);
+  box-shadow: 0.125rem 0.1875rem 0.625rem 0 hsl(var(--bright-blue-accent), 0.2);
+  border-radius: 0.1875rem;
+
+  padding: 0.7rem 3rem;
+
+  transition: opacity 200ms ease-in-out;
+  cursor: pointer;
+
+  &:is(:hover, :focus) {
+    opacity: 0.7;
+  }
+}
+
+.input__errors {
+  font-size: var(--sub-normal-2);
+  font-weight: var(--fw-400);
+  color: var(--red);
+}
+
+.bg-curve {
+  width: 100%;
+  position: relative;
+  top: 0.3125rem;
+}
+
+@media only screen and (min-width: 57.5rem) {
+  .container {
+    width: min(100% - 3rem, var(--max-width));
+
+    margin-inline: auto;
+  }
+}
