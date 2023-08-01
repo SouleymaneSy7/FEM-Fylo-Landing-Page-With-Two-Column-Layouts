@@ -60,8 +60,8 @@ Made it with Vue Js and The Composition API
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here](https://www.frontendmentor.io/solutions/fylo-landing-page-with-two-columnvue-js-composition-api-sass-9E1V0TSvAG)
+- Live Site URL: [Live site URL here](https://fem-fylo-landing-page-with-two-column-layouts.vercel.app/)
 
 ## Author
 
